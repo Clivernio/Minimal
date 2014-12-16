@@ -1,0 +1,69 @@
+@import (reference) "../../../assets/vendor/bootstrap/less/variables";
+@import (reference) "../../../assets/less/_variables";
+
+#incom_wrapper {
+	font-size: @font-size-base;
+	line-height: @line-height-base;
+
+	// 
+
+	.incom-comments-wrapper {
+		padding: @line-height-computed @line-height-computed 0 0;
+		margin: -(@line-height-computed + 8) 0 0 @line-height-computed;
+		border: none;
+	}
+	
+	// 
+
+	.incom-info-icon, 
+	.incom-cancel-x {
+		display: none !important; 
+	}
+
+	.incom-cancel-link {
+		display: inline-block;
+		line-height: @line-height-computed;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		padding: @line-height-computed/4 0;
+	}
+
+
+	//
+
+	.comment-reply-title {
+		display: none;
+	}
+
+	// 
+
+	.comment {
+		margin-top: 0;
+		padding: 0;
+		margin-bottom: @line-height-computed;
+		border-bottom: 1px solid @gray-lighter;
+		border-top: none;
+	}
+
+	// 
+
+	.comment-respond {
+		border-top: none;
+		margin-top: 0;
+	}
+}
+
+.incom-bubble-style a {
+	color: #fff !important;
+}
+
+.touch .incom-bubble-style {
+	display: none !important;
+}
+
+@media ( max-width: @screen-xs-max ) {
+	.incom-bubble-style {
+		display: none !important;
+	}
+}

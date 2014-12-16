@@ -1,0 +1,76 @@
+// WordPress Generated Classes
+// http://codex.wordpress.org/CSS#WordPress_Generated_Classes
+
+.sticky,
+.gallery-caption,
+.bypostauthor {
+	content: '';
+}
+
+.wp-caption {
+	text-align: center;
+	max-width: 100%;
+
+	img {
+		.size(100%, auto);
+	}
+}
+
+.wp-caption-text {
+	background: @gray-lightest; 
+	padding: ( @line-height-computed / 4 )  ( @line-height-computed / 2 );
+	font-size: @font-size-small;
+	line-height: @line-height-computed;
+	margin-bottom: 0;
+	.text-overflow();
+}
+
+.aligncenter {
+	display: block;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.alignright {
+	float: right;
+	margin-left: @grid-gutter-width/2;
+}
+
+.alignleft {
+	float: left;
+	margin-right: @grid-gutter-width/2;
+}
+
+.alignnone {
+	margin-left: 0;
+	margin-right: 0;
+	max-width: 100%;
+}
+
+.aligncenter,
+.alignright,
+.alignleft,
+.alignnone {
+	margin-bottom: @line-height-computed;
+}
+
+p {
+	.aligncenter,	
+	.alignnone {
+		margin-bottom: @line-height-computed/2;
+	}
+
+	.alignright,
+	.alignleft {
+		margin-bottom: @line-height-computed/4;
+	}
+}
+
+p + p {
+	.aligncenter,
+	.alignright,
+	.alignleft,
+	.alignnone {
+		margin-top: @line-height-computed/2;
+	}	
+}

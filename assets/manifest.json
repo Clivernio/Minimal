@@ -1,0 +1,14 @@
+{
+  "dest": "assets/manifest.json",
+  "querystring": true,
+  "assets/css/main.min.css": {
+    "path": "assets/css/main.min.css",
+    "hash": "99e8f66a2f0c5f36eb56afbfda5f5c1b",
+    "handle": "dw_kido_css"
+  },
+  "assets/js/scripts.min.js": {
+    "path": "assets/js/scripts.min.js",
+    "hash": "416ae9a0dd4b82c072fb1e6849ac9a1a",
+    "handle": "dw_kido_js"
+  }
+}

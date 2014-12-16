@@ -1,0 +1,312 @@
+//
+// Bootstrap
+// --------------------------------------------------
+
+// Utilities
+@import "../vendor/bootstrap/less/mixins/hide-text.less";
+@import "../vendor/bootstrap/less/mixins/opacity.less";
+@import "../vendor/bootstrap/less/mixins/image.less";
+@import "../vendor/bootstrap/less/mixins/labels.less";
+@import "../vendor/bootstrap/less/mixins/reset-filter.less";
+@import "../vendor/bootstrap/less/mixins/resize.less";
+@import "../vendor/bootstrap/less/mixins/responsive-visibility.less";
+@import "../vendor/bootstrap/less/mixins/size.less";
+// @import "../vendor/bootstrap/less/mixins/tab-focus.less";
+@import "../vendor/bootstrap/less/mixins/text-emphasis.less";
+@import "../vendor/bootstrap/less/mixins/text-overflow.less";
+@import "../vendor/bootstrap/less/mixins/vendor-prefixes.less";
+
+// Components
+// @import "../vendor/bootstrap/less/mixins/alerts.less";
+// @import "../vendor/bootstrap/less/mixins/buttons.less";
+@import "../vendor/bootstrap/less/mixins/panels.less";
+@import "../vendor/bootstrap/less/mixins/pagination.less";
+@import "../vendor/bootstrap/less/mixins/list-group.less";
+@import "../vendor/bootstrap/less/mixins/nav-divider.less";
+// @import "../vendor/bootstrap/less/mixins/forms.less";
+@import "../vendor/bootstrap/less/mixins/progress-bar.less";
+@import "../vendor/bootstrap/less/mixins/table-row.less";
+
+// Skins
+@import "../vendor/bootstrap/less/mixins/background-variant.less";
+@import "../vendor/bootstrap/less/mixins/border-radius.less";
+@import "../vendor/bootstrap/less/mixins/gradients.less";
+
+// Layout
+@import "../vendor/bootstrap/less/mixins/clearfix.less";
+@import "../vendor/bootstrap/less/mixins/center-block.less";
+@import "../vendor/bootstrap/less/mixins/nav-vertical-align.less";
+@import "../vendor/bootstrap/less/mixins/grid-framework.less";
+@import "../vendor/bootstrap/less/mixins/grid.less";
+
+
+
+//
+// Bootstrap override
+// --------------------------------------------------
+
+// Alert
+// ---------------------------
+
+.alert-variant(@background; @border; @text-color) {
+  background-color: @background;
+  border-color: @border;
+  color: @text-color;
+
+  hr {
+    border-top-color: darken(@border, 5%);
+  }
+  .alert-link,
+  a {
+    color: darken(@text-color, 10%);
+
+    &:hover {
+      color: darken(@text-color, 15%);      
+    }
+  }
+}
+
+
+// WebKit-style focus
+// ---------------------------
+
+.tab-focus() {
+  outline: none;
+}
+
+
+// Form
+// ---------------------------
+
+
+// Form validation states
+
+.form-control-validation(@text-color: @gray; @border-color: @gray-lighter; @background-color: @gray-lightest) {
+  // Color the label and help text
+  .help-block,
+  .control-label,
+  .radio,
+  .checkbox,
+  .radio-inline,
+  .checkbox-inline  {
+    color: @text-color;
+  }
+  // Set the border and box shadow on specific inputs to match
+  .form-control {
+    border-color: @border-color;
+
+    &:focus {
+      border-color: darken(@border-color, 10%);
+    }
+  }
+  // Set validation states also for addons
+  .input-group-addon {
+    color: @text-color;
+    border-color: @border-color;
+    background-color: @background-color;
+  }
+  // Optional feedback icon
+  .form-control-feedback {
+    color: @text-color;
+  }
+}
+
+// Form control focus state
+
+.form-control-focus(@color: @input-border-focus) {
+  @color-rgba: rgba(red(@color), green(@color), blue(@color), .6);
+  &:focus {
+    border-color: @color;
+    outline: 0;
+    .box-shadow(none);
+  }
+}
+
+// Form control sizing
+
+.input-size(@input-height; @padding-vertical; @padding-horizontal; @font-size; @line-height; @border-radius) {
+  height: @input-height;
+  padding: @padding-vertical @padding-horizontal;
+  font-size: @font-size;
+  line-height: @line-height;
+  border-radius: @border-radius;
+
+  select& {
+    height: @input-height;
+    line-height: @input-height;
+  }
+
+  textarea&,
+  select[multiple]& {
+    height: auto;
+  }
+}
+
+
+// Button
+// ---------------------------
+
+
+// Button variants
+
+.button-variant(@color; @background; @border) {
+  color: @color;
+  background-color: @background;
+  border-color: @border;
+
+  &:hover,
+  &:focus,
+  &:active,
+  &.active,
+  .open > .dropdown-toggle& {
+    color: @color;
+    background-color: darken(@background, 3%);
+    border-color: darken(@border, 5%);
+  }
+  &:active,
+  &.active,
+  .open > .dropdown-toggle& {
+    background-image: none;
+  }
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] & {
+    &,
+    &:hover,
+    &:focus,
+    &:active,
+    &.active {
+      background-color: @background;
+      border-color: @border;
+    }
+  }
+
+  .badge {
+    color: @background;
+    background-color: @color;
+  }
+}
+
+// Button sizes
+
+.button-size(@padding-vertical; @padding-horizontal; @font-size; @line-height; @border-radius) {
+  padding: @padding-vertical (@padding-horizontal * 2);
+  font-size: @font-size;
+  line-height: @line-height;
+  border-radius: @border-radius;
+}
+
+
+//
+// Theme
+// --------------------------------------------------
+
+// Font-size
+// ---------------------------
+
+.font-size(@screen) {
+  .fs-mini-@{screen} {
+    font-size: @font-size-mini;
+  }
+
+  .fs-small-@{screen} {
+    font-size: @font-size-small;
+  }
+
+  .fs-base-@{screen} {
+    font-size: @font-size-base;
+  }
+
+  .fs-h6-@{screen} {
+    font-size: @font-size-h6;
+  }
+
+  .fs-h5-@{screen} {
+    font-size: @font-size-h5;
+  }
+
+  .fs-h4-@{screen} {
+    font-size: @font-size-h4;
+  }
+
+  .fs-h3-@{screen} {
+    font-size: @font-size-h3;
+  }
+
+  .fs-h2-@{screen} {
+    font-size: @font-size-h2;
+  }
+
+  .fs-h1-@{screen} {
+    font-size: @font-size-h1;
+  }
+}
+
+// Line height
+// ---------------------------
+
+.line-height(@screen) {
+  .lh-base-@{screen} {
+    line-height: @line-height-computed;
+  }
+
+  .lh-1-5-@{screen} {
+    line-height: @line-height-computed * 1.5;
+  }
+
+  .lh-2-@{screen} {
+    line-height: @line-height-computed * 2;
+  }
+
+  .lh-3-@{screen} {
+    line-height: @line-height-computed * 3;
+  }
+}
+
+// Margin bottom
+// ---------------------------
+
+.margin-bottom(@screen) {
+  .mb-0-@{screen} {
+    margin-bottom: 0;
+  }
+
+  .mb-0-5-@{screen} {
+    margin-bottom: @line-height-computed/2;
+  }
+
+  .mb-1-@{screen} {
+    margin-bottom: @line-height-computed;
+  }
+
+  .mb-1-5-@{screen} {
+    margin-bottom: @line-height-computed * 1.5;
+  }
+
+  .mb-2-@{screen} {
+    margin-bottom: @line-height-computed * 2;
+  }
+
+  .mb-3-@{screen} {
+    margin-bottom: @line-height-computed * 3;
+  }
+}
+
+// Pull
+// ---------------------------
+
+.pull(@screen) {
+  .pull-none-@{screen} {
+    float: none;
+  }
+
+  .pull-left-@{screen} {
+    float: left;
+  }
+
+  .pull-right-@{screen} {
+    float: right;
+  }
+}
+
+

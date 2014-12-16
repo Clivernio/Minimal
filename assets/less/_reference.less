@@ -1,0 +1,56 @@
+// Color
+// -------------------------
+
+.rf-color-gray-light-to-gray {
+	color: @gray-lighter;
+
+	&:hover {
+		color: @gray;
+	}
+}
+
+
+// Button line
+// -------------------------
+
+.rf-botton-line {
+	display: inline-block;
+
+	&:after {
+		content: '';
+		display: block;
+		height: 1px;
+		width: 100%;
+		background: @gray-lighter;
+		margin-top: -1px;
+	}
+}
+
+.rf-reset-botton-line {
+	&:after {
+		display: none !important;
+	}
+} 
+
+// Button line
+// -------------------------
+
+.rf-opacity-1 {
+	.no-touch & {
+		opacity: .5;
+		.transition( opacity .3s);
+
+		&:hover {
+			opacity: .9;
+		}
+	}
+}
+
+// Arrow 1
+// -------------------------
+
+.arrow-1 {
+	&:after {
+		content: '→';
+	}
+}

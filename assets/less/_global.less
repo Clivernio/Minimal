@@ -1,0 +1,174 @@
+//
+// Layout
+// --------------------------------------------------
+
+@media ( min-width: @screen-md ) {
+  #page {
+    padding-top: @line-height-computed * 3;
+
+    @media ( min-with: @screen-sm ) {
+      padding-top: @line-height-computed * 5;
+    }
+  }
+
+  .has-sidebar {
+  .sidebar {
+      border-right: 1px solid @gray-lighter;
+    } 
+
+    .main {
+      border-left: 1px solid @gray-lighter;
+      margin-left: -1px;
+    }
+  }
+}
+
+.sidebar-toggle {
+  display: none;
+}
+
+.sidebar-inner,
+.main {
+  padding-bottom: @line-height-computed * 2;
+  background: #fff;
+}
+
+@media ( max-width: @screen-sm-max ) {
+
+  // 
+  html {
+    overflow-x: hidden;
+  }
+  
+  html[lang] {
+    margin-top: 0 !important;
+  }
+
+  #wpadminbar {
+    display: none;
+  }
+
+  .main {
+    .backface-visibility(hidden);
+  }
+
+  .show-sidebar {
+    height: 100%;
+
+    body {
+      height: 100%;
+    }
+  }
+
+  .sidebar-toggle {
+    display: block;
+
+    position: fixed;
+    top: @line-height-computed;
+    left: @grid-gutter-width/2;
+    z-index: 1;
+
+    .square( @line-height-computed * 1.5);
+    border-radius: 0;
+    background: fade(#000, 50%) !important;
+    
+    font-size: 17px;
+    line-height: @line-height-computed * 1.5;
+    text-align: center;
+    color: #fff !important;
+
+    .show-sidebar & {
+      background: fade(#000, 90%) !important;
+    }
+  }
+  
+  //
+
+  .main,
+  .sidebar-inner {
+    padding-top: @line-height-computed * 2; 
+  }
+
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px; 
+    height: 100%;
+    border-right: 1px solid @gray-lighter;
+    clip: rect(0, 0, 0, 0);
+    .transition( .3s .3s );
+
+    .sidebar-inner {
+      overflow-y: scroll;
+      height: 100%;
+    }
+  }
+
+  .sidebar-bottom {
+    position: relative;
+    z-index: 1;
+  }
+
+  .main,
+  .sidebar-bottom {
+    .translate( 0, 0 );
+    .transition( .3s );
+  }
+  
+  // 
+
+  .show-sidebar {
+    .main,
+    .sidebar-bottom,
+    .sidebar-toggle {
+      .translate( 250px, 0 ); 
+    }
+
+    .sidebar {
+      clip: rect(0, 100000px, 100000px, 0);
+
+      .transition( 0 );
+    }
+  }
+}
+
+//
+// Utilities
+// --------------------------------------------------
+
+.border-radisus-rounded-base {
+	border-radius: @border-radisus-rounded-base;
+}
+
+.border-radisus-rounded-large {
+	border-radius: @border-radisus-rounded-large;
+}
+
+.border-radisus-rounded-small {
+	border-radius: @border-radisus-rounded-small;
+}
+
+.dw-grid-5 {
+  margin: -@grid-gutter-width/8;
+  .clearfix();
+
+  .grid-item {
+    float: left;
+    padding: @grid-gutter-width/8;
+    width: 20%;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+
+
+//
+// Fix style front end editor
+// --------------------------------------------------
+.medium-editor-toolbar li button {
+  background:linear-gradient(to top,#242424,rgba(36,36,36,.89));
+}

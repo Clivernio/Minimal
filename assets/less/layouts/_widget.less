@@ -1,0 +1,398 @@
+// Sidebar
+// --------------------------------------------------
+
+.sidebar-inner {
+	padding-right: @line-height-computed * 2;
+	margin-right: -(@grid-gutter-width/2);
+	font-size: @font-size-small;
+	line-height: @line-height-computed;
+}
+
+// Sidebar bottom
+// -------------------------------------------------- 
+
+.sidebar-bottom {
+	background: #171717;
+	padding: @line-height-computed * 2 0;
+
+	@media ( min-width: @screen-md ) { 
+		padding: @line-height-computed * 5 0;
+	}
+
+	color: @gray-light;
+
+	a {
+		color: #fff;
+
+		&:hover {
+			color: @brand-primary;
+		}
+	}
+
+	.widget-title {
+		color: #fff;
+	}
+	
+	@media (min-width: @screen-md) {
+		.vertocal-line {
+			position: relative;
+
+			&:before {
+				content: '';
+				.size(1px, 100%);
+				display: block;
+				position: absolute;
+				left: 50%;
+				background: @gray;
+			}
+		}
+	}
+}
+
+
+// Global Widget
+// --------------------------------------------------
+
+.widget {
+	margin-bottom: @line-height-computed * 2;
+
+	ul:extend(.list-unstyled) {};
+
+	select {
+		.form-control();
+		font-size: @font-size-small;
+	}
+}
+
+.widget-title {
+	margin-top: 0;
+
+	font-size: @font-size-small;
+	line-height: @line-height-computed;
+	text-transform: uppercase;
+
+	&:after {
+		content: '.';
+	}
+}
+
+
+// widget search
+// --------------------------------------------------
+
+.widget_search {
+	.search-field {
+		font-size: @font-size-small;
+	}
+}
+
+
+// widget calendar
+// --------------------------------------------------
+
+.widget_calendar {
+	#wp-calendar {
+	    width: 100%;
+	}
+
+	caption {
+		margin-bottom: -1px;
+		font-weight: bold;
+		padding: @line-height-computed/4;
+		text-align: left;
+	}
+
+	th, td {
+		border-top: 1px solid @gray-lighter;
+		border-bottom: 1px solid @gray-lighter;
+		text-align: center;
+		padding: @line-height-computed/8;
+
+		.bg-dark & {
+			border-color: @gray;
+		}
+	}
+
+	a {
+		font-weight: bold;
+	}
+
+	#today {
+		border-left: 1px solid @gray-lighter;
+		border-right: 1px solid @gray-lighter;
+
+		.bg-dark & {
+			border-color: @gray;
+		}
+	}
+}
+
+
+// widget categories
+// --------------------------------------------------
+
+.widget_categories {
+	.current-cat {
+		> a {
+			color: @brand-primary;
+
+			.bg-dark & {
+				color: @gray-light;
+			}
+
+			&:after {
+				content: ' →';
+			}
+		}
+	}
+}
+
+// widget nav menu
+// --------------------------------------------------
+
+.widget_nav_menu {
+	a {
+		color: @brand-primary;
+
+		&:hover {
+			color: @gray;
+		}
+	}
+
+	.bg-dark & {
+		a {
+			color: #fff;
+
+			&:hover {
+				color: @gray;
+			}
+		}
+	}
+
+	.current-menu-item > a,
+	.current_page_item > a {
+		color: @gray;
+
+		.bg-dark & {
+			color: @gray-light;
+		}
+
+		&:after {
+			content: ' →';
+		}
+	}
+
+	.sub-menu li {
+		border-left: 1px solid @gray-lighter;
+		padding-left: @line-height-computed / 2;
+		margin-left: @line-height-computed / 4; 
+		position: relative;
+
+		&:before {
+			content: "─";
+			position: absolute;
+			left: 0;
+			top: -1px;
+			color: @gray-lighter;
+		}
+	}
+}
+
+
+// widget pages
+// --------------------------------------------------
+
+.widget_pages {
+	.current_page_item {
+		> a {
+			color: @brand-primary;
+
+			.bg-dark & {
+				color: @gray-light;
+			}
+
+			&:after {
+				content: ' →';
+			}
+		}
+	}
+}
+
+
+// widget recent entries
+// --------------------------------------------------
+
+.widget_recent_entries {
+	li {
+		margin-bottom: @line-height-computed/2;
+	}
+
+	.post-date {
+		color: @gray-light;
+		display: block;
+	}
+}
+
+
+// widget recent comments
+// --------------------------------------------------
+
+.widget_recent_comments {
+	li {
+		margin-bottom: @line-height-computed / 2;
+	}
+}
+
+
+// widget rss
+// --------------------------------------------------
+
+.widget_rss {
+	.widget-title {
+		img {
+			position: absolute;
+			clip: rect(0, 0, 0, 0);
+		}
+
+		a:first-child {
+			margin-right: @grid-gutter-width/8;
+			font-size: 18px;
+			
+			&:before {
+				content: "\f09e";
+				font-family: FontAwesome;
+			}
+
+		}
+
+	}
+
+	.rss-date {
+		display: block;
+		padding-top: @line-height-computed/2;
+		margin-bottom: @line-height-computed;
+	}
+
+	.rssSummary {
+		padding-top: @line-height-computed/2;
+		margin-top: -@line-height-computed;
+		margin-bottom: @line-height-computed;
+	}
+
+	cite {
+		padding-top: @line-height-computed/2;
+		margin-top: -@line-height-computed;
+		margin-bottom: @line-height-computed;
+		display: block;
+	}
+}
+
+
+// Widget about
+// --------------------------------------------------
+
+.widget-about {
+	.description {
+		margin-top: @line-height-computed;
+	}
+
+	.social-links {
+		margin-top: @line-height-computed;
+		margin-bottom: 0;
+	}
+}
+
+
+
+// Last twitter
+// --------------------------------------------------
+
+// common style
+.tweet-item {
+	padding-top: @line-height-computed;
+	margin-top: @line-height-computed; 
+
+	&:first-child {
+		// margin-top: 0;
+		padding-top: 0; 
+	}
+}
+
+.twitter-user {
+	font-size: @font-size-small;
+
+	img {
+		margin-top: -2px;
+		&:extend( .img-circle );
+	}
+
+	strong {
+		font-weight: normal;
+	}
+}
+
+.twitter-follow-button {
+	margin-top: @line-height-computed/2;
+	min-height: @line-height-computed; 
+}
+
+.dw_twitter {
+	.time a {
+		display: block;
+		font-size: @font-size-small;
+		line-height: @line-height-computed;
+		margin: @line-height-computed/2 0 0;
+		color: @gray-light;
+	}
+}
+
+// '@, # cases'
+.tweet-item {
+	.twitter-user {
+		margin-bottom: @line-height-computed/2;
+	}
+}
+
+// 'from' cases
+.tweets {
+	border: 1px solid @gray-lighter; 
+	padding: 15px 20px;
+	position: relative;
+}
+
+.dw-twitter-inner > .twitter-user {
+	margin-top: @line-height-computed/2;
+	text-align: right;
+}
+
+
+// Instagram
+// --------------------------------------------------
+
+.instagram-pics {
+	width: 100%;
+	margin: -@grid-gutter-width/8;
+  	.clearfix();
+
+	li {
+		float: left;
+	    padding: @grid-gutter-width/8;
+	    width: 20%;
+	    .text-overflow();
+
+	    img {
+	      width: 100%;
+	      height: auto;
+	    }
+	}
+}
+
+.null-instagram-feed {
+	.clear {
+		margin-top: @line-height-computed / 2;
+		margin-bottom: 0;
+		font-size: @font-size-small;
+		line-height: @line-height-computed;
+		clear: both; 
+	}	
+}

@@ -1,0 +1,260 @@
+.comments-area {
+	margin-top: @line-height-computed * 2;
+
+	@media ( min-width: @screen-md ) {
+		margin-left: -@grid-gutter-width/2;
+		padding-left: @line-height-computed * 5;
+	}
+}
+
+
+// Comment title
+// ----------------------------
+
+.comments-title {
+	margin-bottom: @line-height-computed;
+	font-size: @font-size-small;
+	line-height: @line-height-computed;
+	text-transform: uppercase;
+}
+
+// Comment list
+// ----------------------------
+
+.comment-list {
+	list-style: none;
+	padding: 0;
+}
+
+.comment-navigation {
+	text-align: center;
+	padding-top: (@line-height-computed*2) - 1;
+	margin-top: @line-height-computed*2;
+	border-top: 1px solid @gray-lighter;
+
+	.screen-reader-text {
+		.hide-text();
+		margin: 0;
+	}
+}
+
+.comment,
+.pingback { 
+	margin-top: @line-height-computed * 2;
+	padding-top: (@line-height-computed*2) - 1;
+	border-top: 1px solid @gray-lighter;
+}
+
+.comment-list {
+	> .comment,
+	> .pingback {
+		&:first-child {
+			border-top: none;
+			padding-top: 0;
+			margin-top: 0;
+		}
+	}	
+}
+
+.pingback {
+	.comment-meta,
+	.comment-content {
+		padding-left: 0;
+	}
+}
+
+.comment-meta {
+	position: relative;
+	padding-left: @line-height-computed * 2.5;
+
+	@media ( min-width: @screen-sm) {
+		padding-left: @line-height-computed * 3; 
+	}
+	
+	a {
+		color: @gray-darker;
+
+		&:hover {
+			color: @brand-primary;
+		}
+	} 
+
+	.avatar {
+		position: absolute;
+		left: 0;
+		top: 0;
+		border-radius: 50%;
+		.square(@line-height-computed * 2);
+	}
+
+	.url {
+		font-size: @font-size-large;
+		line-height: @line-height-computed;
+		display: block;
+	}
+
+	.says {
+		display: none;
+	}
+
+	.comment-metadata {
+		font-size: @font-size-small;
+		line-height: @line-height-computed;
+	}
+
+	.edit-link:before {
+		content: '/';
+		padding: @grid-gutter-width/8;
+	}
+}
+
+.comment-content {
+	padding-top: @line-height-computed;
+
+	@media (min-width: @screen-sm) {
+		padding-left: @line-height-computed * 3;
+	}
+}
+
+.comment .reply {
+	margin-top: @line-height-computed;
+	
+	@media (min-width: @screen-sm) {
+		padding-left: @line-height-computed * 3;
+	}
+	
+	a {
+		color: @gray-darker;
+
+		&:hover {
+			color: @brand-primary;
+		}
+	}
+}
+
+.comment .children {
+	list-style: none;
+	padding-left: @grid-gutter-width*2;
+
+	@media (max-width: @screen-xs-max) {
+		padding-left: 0;
+	}
+}
+
+.no-comments {
+	&:extend(.alert all, .alert-info all);
+
+	margin-top: @line-height-computed*2;
+}
+
+
+// Comment respond
+// ----------------------------
+
+.comment-respond {
+	position: relative;
+	overflow: hidden;
+	
+	margin-top: (@line-height-computed * 2) - 1;
+	border-top: 1px solid @gray-lighter;
+
+	label {
+		display: inline-block;
+
+		font-size: @font-size-small;
+		line-height: @line-height-computed;
+		color: @gray-darker;
+
+		margin-top: 0;
+	}
+
+	&:first-child {
+		border-top: none;
+
+		.comment-reply-title {
+			margin-top: 0;
+		}
+	}
+
+	.comment-alert {
+		clear: both;
+		margin-top: @line-height-computed; 
+		display: none;
+	}
+}
+
+.comment-reply-title {
+	&:extend(.comments-title all);
+	margin-top: @line-height-computed;
+}
+
+#cancel-comment-reply-link {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	text-transform: none;
+	&:extend(.btn all, .btn-default all);
+
+	@media ( max-width: @screen-xs ) {
+		padding-left: @line-height-computed / 2;
+		padding-right: @line-height-computed / 2;
+	}
+}
+
+.comment-notes {
+	display: none;
+}
+
+.logged-in-as {
+	float: right;
+	margin-bottom: @line-height-computed / 2;
+
+	font-size: @font-size-small;
+	line-height: @line-height-computed;
+
+	a {
+		&:extend(.rf-botton-line all);
+	}
+}
+
+.comment-respond .not-valid {
+	border-color: @state-danger-text !important;
+}
+
+textarea#comment {
+	&:extend(.form-control all);
+
+	width: 100%;
+	max-width: 100%;
+}
+
+.comment-form-comment textarea#comment {
+	height: @line-height-computed * 6; 	
+}
+
+.comment-form-author,
+.comment-form-email,
+.comment-form-url,
+.comment-form-comment {
+	input {
+		&:extend(.form-control all);
+	}
+
+	.required {
+		color: @brand-danger; 
+	}
+}
+
+.comment-form .form-submit {
+	float: right; 
+	margin-bottom: 0;
+
+	#submit {
+		&:extend(.btn all, .btn-default all);
+
+		@media ( max-width: @screen-xs ) {
+			padding-left: @line-height-computed / 2;
+			padding-right: @line-height-computed / 2;
+		}
+	} 
+}

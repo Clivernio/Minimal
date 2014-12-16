@@ -1,0 +1,254 @@
+//
+// Carousel
+// --------------------------------------------------
+
+
+// Wrapper for the slide container and indicators
+.carousel {
+  position: relative;
+}
+
+.carousel-inner {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+
+  > .item {
+    display: none;
+    position: relative;
+    .transition(.6s ease-in-out left);
+
+    // Account for jankitude on images
+    > img,
+    > a > img {
+      &:extend(.img-responsive);
+      line-height: 1;
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  > .active,
+  > .next,
+  > .prev { display: block; }
+
+  > .active {
+    left: 0;
+  }
+
+  > .next,
+  > .prev {
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+
+  > .next {
+    left: 100%;
+  }
+  > .prev {
+    left: -100%;
+  }
+  > .next.left,
+  > .prev.right {
+    left: 0;
+  }
+
+  > .active.left {
+    left: -100%;
+  }
+  > .active.right {
+    left: 100%;
+  }
+
+}
+
+// Left/right controls for nav
+// ---------------------------
+
+/* Old control
+.carousel-control {
+  color: #fff !important;
+  background: fade(#000, 50%);
+  display: inline-block;
+  font-size: 28px;
+  line-height: @line-height-computed * 1.5;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  z-index: 1;
+  .square( @line-height-computed * 1.5 );
+  .transition(.3s);
+
+  &:extend( .rf-reset-botton-line all );
+
+  &.right {
+    right: 0;
+  }
+
+  &.left {
+    right: (@line-height-computed * 1.5) + 1;
+  }
+
+  &:hover {
+    background: fade(#000, 80%);
+    z-index: 1;
+  }
+}*/
+
+.carousel-control {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 20%;
+  .opacity(0);
+  font-size: @carousel-control-font-size;
+  color: @carousel-control-color;
+  text-align: center;
+  text-shadow: @carousel-text-shadow;
+  .transition(opacity .5s);
+  // We can't have this transition here because WebKit cancels the carousel
+  // animation if you trip this while in the middle of another animation.
+
+  // Set gradients for backgrounds
+  &.left {
+    #gradient > .horizontal(@start-color: rgba(0,0,0,.1); @end-color: rgba(0,0,0,.0001));
+  }
+  &.right {
+    left: auto;
+    right: 0;
+    #gradient > .horizontal(@start-color: rgba(0,0,0,.0001); @end-color: rgba(0,0,0,.1));
+  }
+
+  .carousel:hover & {
+    .opacity(.5);
+  }
+
+  &.right {
+    left: auto;
+    right: 0;
+  }
+
+  // Hover/focus state
+  &:hover,
+  &:focus {
+    outline: 0;
+    color: @carousel-control-color;
+    text-decoration: none;
+    .opacity(.9);
+  }
+
+  // Toggles
+  .icon-prev,
+  .icon-next,
+  .fa-angle-left,
+  .fa-angle-right {
+    position: absolute;
+    z-index: 5;
+    display: inline-block;
+    top: 50%;
+    width: 30px;
+    height: 30px;
+    margin-top: -15px;
+    font-size: 30px;
+  }
+  .icon-prev,
+  .fa-angle-left {
+    left: 50%;
+    margin-left: -15px;
+  }
+  .icon-next,
+  .fa-angle-right {
+    right: 50%;
+    margin-right: -15px;
+  }
+  .icon-prev,
+  .icon-next {
+    width:  30px;
+    height: 30px;
+    margin-top: -10px;
+    font-family: serif;
+  }
+
+
+  .icon-prev {
+    &:before {
+      content: '\2039';// SINGLE LEFT-POINTING ANGLE QUOTATION MARK (U+2039)
+    }
+  }
+  .icon-next {
+    &:before {
+      content: '\203a';// SINGLE RIGHT-POINTING ANGLE QUOTATION MARK (U+203A)
+    }
+  }
+}
+
+.carousel-indicators {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  z-index: 15;
+  width: 60%;
+  margin-left: -30%;
+  padding: 0 0 5px 5px;
+  list-style: none;
+  text-align: center;
+  background: rgba(0,0,0,.5);
+  .transition(opacity .5s);
+  .opacity(0);
+
+  .carousel:hover & {
+    .opacity(1);
+  }
+
+  li {
+    display: block;
+    width: 20%;
+    margin: 5px 0 0;
+    padding: 0 5px 0 0;
+    float: left;
+    max-height: 55px;
+    overflow: hidden;
+  }
+
+  img {
+    min-height: 55px;
+  }
+
+  .active {
+    .opacity(0.3);
+    img {
+      .box-shadow(0 0 5px 0 #fff);
+    }
+  }
+}
+
+
+// Optional captions
+// -----------------------------
+// Hidden by default for smaller viewports
+.carousel-caption {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding: @line-height-computed/4 @line-height-computed/2;
+  color: @carousel-caption-color;
+  background: fade(#000, 20%);
+  text-align: center;
+}
+
+.carousel-caption-inner {
+  .text-overflow();
+}
+
+
+// Scale up controls for tablets and up
+@media screen and (min-width: @screen-sm-min) {
+
+  // Scale up the controls a smidge
+  .carousel-control {
+    width: 10%;
+  }
+}
