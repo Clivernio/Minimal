@@ -10,6 +10,72 @@
  * @package     Ant
  */
 
+/**
+ * Contact Form
+ *
+ * <form action="" id="clivern_beh_contact" method="post">
+ *       Please send us your feedback, any kind is highly appreciated 
+ *       <input name="securityhash" id="clivern_beh_contact_hash" type="hidden" value="d8c588c77bt7kdnksjhvfwsiedhcseifwhslifdhef" />
+ *
+ *       Your name
+ *       <input name="client_name" id="clivern_beh_contact_name" class="input-block-level" type="text" placeholder="Type your name" value="" />
+ *       
+ *       Email
+ *       <input name="client_email" id="clivern_beh_contact_email" class="input-block-level" type="text" placeholder="webmaster@example.com" value="" />
+ *       
+ *       Website
+ *       <input name="client_website" id="clivern_beh_contact_website" class="input-block-level" type="text" placeholder="http://" value="" />
+ *       
+ *       Your Message
+ *       <textarea name="client_message" id="clivern_beh_contact_message" class="input-block-level"></textarea>
+ * 
+ *       <input class="btn pull-right" id="clivern_beh_contact_submit" type="submit" value="Submit" />
+ *       <span id="clivern_beh_contact_success_message" class="text-success" style="display:none">Thanks, We will respond to your feedback as soon as possible</span>
+ * </form>
+ */
+
+/**
+ * Support Form
+ *
+ * <form action="" id="clivern_beh_support" method="post">
+ *       Please fill this form
+ *       <input name="securityhash" id="clivern_beh_support_hash" type="hidden" value="d8c588c77bt7r6e9596s1f7rfwsev68rr7" />
+ *
+ *       Your name
+ *       <input name="client_name" id="clivern_beh_support_name" class="input-block-level" type="text" placeholder="Type your name" value="" />
+ *       
+ *       Item
+ *       <select class="input-block-level" id="clivern_beh_support_item" name='client_item'>
+ *             <option value='Accountant'>Accountant</option>
+ *             <option value='Bottle'>Bottle</option>
+ *             <option value='Bits'>Bits</option>
+ *             <option value='Diker'>Diker</option>
+ *       </select>
+ *       
+ *       Issue Type
+ *       <select class="input-block-level" id="clivern_beh_support_issue" name='client_issue'>
+ *             <option value='Security Bug'>Security Bug</option>
+ *             <option value='Normal Bug'>Normal Bug</option>
+ *             <option value='Suggestion'>Suggestion</option>
+ *             <option value='Inquiry'>Inquiry</option>
+ *       </select>
+ *       
+ *       Email
+ *       <input name="client_email" id="clivern_beh_support_email" class="input-block-level" type="text" placeholder="webmaster@example.com" value="" />
+ *       
+ *       Website
+ *       <input name="client_website" id="clivern_beh_support_website" class="input-block-level" type="text" placeholder="http://" value="" />
+ *       
+ *       Your Message
+ *       <textarea name="client_message" id="clivern_beh_support_message" class="input-block-level"></textarea>
+ *
+ * 
+ *       <input class="btn pull-right" id="clivern_beh_support_submit" type="submit" value="Submit" />
+ *       <span id="clivern_beh_support_success_message" class="text-success" style="display:none">Thanks, We will respond to your ticket as soon as possible</span>
+ * 
+ * </form>
+ */
+
 class Forms {
 
       /**
