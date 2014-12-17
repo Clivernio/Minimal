@@ -55,8 +55,11 @@ if ( ! function_exists( 'dw_kido_page_header' ) ) {
 if ( ! function_exists( 'dw_kido_paging_nav' ) ) {
 	function dw_kido_paging_nav( $wp_query = false ) {
 		if ( ! $wp_query ) {
-			global $wp_query;   
+			global $wp_query;
 		}
+		//solve issue with dw-kido Version 1.0
+		$paging_nav = dw_kido_get_theme_option( 'paging_nav', 'infinite' );
+		//end solving issue
 		?>
 
 		<?php if ( $wp_query->max_num_pages < 2 ) : ?>
@@ -129,7 +132,7 @@ if ( ! function_exists( 'dw_kido_posted_on' ) ) {
 		if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
 			$time_string = '<time class="updated" datetime="%3$s">%4$s</time>';
 		} else {
-			$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time>';
+			$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
 		}
 
 		$time_string = sprintf( $time_string,

@@ -16,21 +16,21 @@ require_once DW_KIDO_PATH . '/inc/scripts.php';        					// Scripts and style
 require_once DW_KIDO_PATH . '/inc/template-tags.php';  					// Custom template tags
 require_once DW_KIDO_PATH . '/inc/extras.php';         					// Custom functions
 require_once DW_KIDO_PATH . '/inc/activation.php';         				// Custom functions
-//require_once DW_KIDO_PATH . '/inc/front-end-editor/functions.php';     	// Front end editor 
+require_once DW_KIDO_PATH . '/inc/front-end-editor/functions.php';     	// Front end editor 
 
 
 // Plugins
 // ------------------------------------------
 
-//include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 
-//if ( is_plugin_active( 'dw-question-answer/dw-question-answer.php' ) ) {
-//	require_once DW_KIDO_PATH . 'inc/dwqa/dwqa.php';
-//}
+if ( is_plugin_active( 'dw-question-answer/dw-question-answer.php' ) ) {
+	require_once DW_KIDO_PATH . 'inc/dwqa/dwqa.php';
+}
 
-//if ( is_plugin_active( 'inline-comments/functions.php' ) ) {
-//	require_once DW_KIDO_PATH . 'inc/inline-comments/inline-comments.php';
-//}
+if ( is_plugin_active( 'inline-comments/functions.php' ) ) {
+	require_once DW_KIDO_PATH . 'inc/inline-comments/inline-comments.php';
+}
 
 //Push Features
 // --------------------------------------------

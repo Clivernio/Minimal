@@ -1,6 +1,6 @@
 <?php
 /**
- * Ant - Minimal WordPress Theme
+ * Min. - Minimal WordPress Theme
  *
  * @author      Clivern <hello@clivern.com>
  * @copyright   2014 Clivern
@@ -10,7 +10,7 @@
  * @package     Ant
  */
 
-class Core{
+class Core {
 	
 	/**
        * Holds an instance of this class
