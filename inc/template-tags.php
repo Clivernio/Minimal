@@ -4,7 +4,7 @@ if ( ! function_exists( 'dw_kido_page_header' ) ) {
 		echo '<header class="page-header">';
 		echo '<h1 class="page-title">';
 		if ( is_category() ) {
-			_e( 'Catgory: ', 'dw-kido' );
+			_e( 'Category: ', 'dw-kido' );
 			single_cat_title();
 
 		} elseif ( is_tag() ) {
