@@ -586,6 +586,7 @@ function dw_kido_social_links( $social_networks = array( 'facebook', 'twitter', 
 		echo '<ul class="social-links list-inline">';
 		foreach ( $social_links as $social_link => $value ) {
 			if ( $value ) { ?>
+			<?php $social_link = ($social_link == 'google_plus') ? 'rss' : $social_link; ?>
 				<li class="<?php echo esc_html( str_replace( '_', '-', $social_link ) ); ?>"><a href="<?php echo esc_url( $value ); ?>" target="_blank"><i class="fa fa-<?php echo esc_html( str_replace( '_', '-', $social_link ) ); ?>"></i></a></li>
 			<?php }
 		}
