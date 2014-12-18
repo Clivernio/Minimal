@@ -33,22 +33,22 @@ class Portfolio extends WP_Widget {
        */
       private $items = array(
       	'accountant' => array(
-                  'thumb' => 'http://clivern.com/temp/accountant-ico.png',
+                  'thumb' => 'http://clivern.com/wp-content/uploads/2014/12/accountant-ico.png',
                   'title' => 'Accountant - Store Accounting System',
                   'link' => 'http://clivern.com/portfolio/accountant/'
                   ),
       	'bottle' => array(
-                  'thumb' => 'http://clivern.com/temp/bottle-ico.png',
+                  'thumb' => 'http://clivern.com/wp-content/uploads/2014/12/bottle-ico.png',
                   'title' => 'Bottle - Wordpress Files Pocket',
                   'link' => 'http://clivern.com/portfolio/bottle/'
                   ),
       	'bits' => array(
-                  'thumb' => 'http://clivern.com/temp/bits-ico.png',
+                  'thumb' => 'http://clivern.com/wp-content/uploads/2014/12/bits-ico.png',
                   'title' => 'Bits - Modern Syntax Highlighter',
                   'link' => 'http://clivern.com/portfolio/bits/'
                   ),
       	'diker' => array(
-                  'thumb' => 'http://clivern.com/temp/diker-ico.png',
+                  'thumb' => 'http://clivern.com/wp-content/uploads/2014/12/diker-ico.png',
                   'title' => 'Diker - Online Surveys WordPress Plugin',
                   'link' => 'http://clivern.com/portfolio/diker/'
                   )
