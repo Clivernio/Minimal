@@ -62,10 +62,10 @@ class Portfolio extends WP_Widget {
       function Portfolio()
       {
             $widget_ops = array(
-              'classname' => 'clivern_portfolio_class',
+              'classname' => 'null-instagram-feed',
               'description' => __('Display My Portfolio Items Thumbnails', 'dw-kido') );
 
-            $this->WP_Widget('clivern_portfolio', __('Portfolio', 'dw-kido'), $widget_ops);
+            $this->WP_Widget('null-instagram-feed', __('Portfolio', 'dw-kido'), $widget_ops);
       }
 
       /**

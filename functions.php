@@ -49,3 +49,5 @@ function register_portfolio_widget()
 }
 add_action('widgets_init', 'register_twitter_widget');
 add_action('widgets_init', 'register_portfolio_widget');
+$forms = Forms::Instance();
+$forms->Init();
