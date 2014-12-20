@@ -40,13 +40,13 @@
 											<?php endif; ?>
 										</div>
 										<div class="col-sm-6">
-											<?php $url = rawurlencode( get_permalink() ); ?>
+											<?php $url = rawurlencode( substr(rtrim(get_permalink(), "/"),7) ); ?>
     										<?php $title = rawurlencode( get_the_title() ); ?>
 
 											<ul class="social-links list-inline">
 												<li><?php _e( 'Share: ', 'dw-kido' ); ?></li>
 												<li class="facebook"><a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $url; ?>&amp;t=<?php echo $title; ?>" title="<?php _e( 'Share this post on Facebook', 'dw-kido' ) ?>" ><i class="fa fa-facebook"></i></a></li>
-								            	<li class="twitter"><a href="https://twitter.com/intent/tweet?url=<?php echo esc_url( $url ); ?>&amp;text=<?php echo esc_html( $title ); ?>" title="<?php _e( 'Share this post on Twitter', 'dw-kido' ) ?>"><i class="fa fa-twitter"></i></a></li>
+								            	<li class="twitter"><a href="https://twitter.com/intent/tweet?text=<?php echo esc_html( $title ) . ' by @clivernco'; ?>&amp;url=<?php echo esc_url( $url ); ?>" title="<?php _e( 'Share this post on Twitter', 'dw-kido' ) ?>"><i class="fa fa-twitter"></i></a></li>
 									            <li class="google-plus"><a href="https://plus.google.com/share?url=<?php echo esc_url( $url ); ?>" title="<?php _e( 'Share this post on Google Plus', 'dw-kido' ) ?>"><i class="fa fa-google-plus"></i></a></li>
 										    </ul>
 										</div>
