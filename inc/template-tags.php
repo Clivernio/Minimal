@@ -144,8 +144,8 @@ if ( ! function_exists( 'dw_kido_posted_on' ) ) {
 
 		$categories_list = get_the_category_list( __( ', ', 'dailyplus' ) );
 
-		echo '<span class="byline"><span>' . esc_html__( 'By ','dw-kido' ) . '</span><span>'. get_the_author() .'</span></span>';
-		echo '<span class="post-on"><span>' . esc_html__( ' On ','dw-kido' ) . '</span><span>' . wp_kses_post( $time_string ) . '</span></span>';
+		echo '<span class="byline"><span>' . esc_html__( 'By ','dw-kido' ) . '</span><span class="vcard author"><span class="fn">'. get_the_author() .'</span></span></span>';
+		echo '<span class="post-on"><span>' . esc_html__( ' On ','dw-kido' ) . '</span><span class="updated">' . wp_kses_post( $time_string ) . '</span></span>';
 		echo '<span class="post-in"><span>' . esc_html__( ' In ','dw-kido' ) . '</span><span>' . $categories_list . '</span></span>';
 		if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) {
 			echo '<span class="comments-link"><span>' . esc_html__( ' with ','dw-kido' ) . '</span><span>'; 
