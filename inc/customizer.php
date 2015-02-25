@@ -457,7 +457,8 @@ function dw_kido_logo() {
 		$header_class = 'display-title';
 	}
 
-	$logo = esc_url( dw_kido_get_theme_option( 'logo' ) );
+	$logo = esc_url("http://clivern.com/wp-content/uploads/2015/01/clivern_logo.png");
+	//$logo = esc_url( dw_kido_get_theme_option( 'logo' ) );
 	$logo_id = dw_kido_get_attachment_id_by_url( $logo );
 	$logo_url = wp_get_attachment_image_src( $logo_id, 'logo' );
 	if ( $logo_url ) {

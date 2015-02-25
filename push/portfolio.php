@@ -24,7 +24,7 @@ class Portfolio extends WP_Widget {
        * 
        * @var string $this->title
        */
-      private $follow = 'http://codecanyon.net/user/clivern';
+      private $follow = '';
 
       /**
        * Portfolio Items
@@ -59,7 +59,7 @@ class Portfolio extends WP_Widget {
        * 
        * @since 1.0
        */
-      function Portfolio()
+      function __construct()
       {
             $widget_ops = array(
               'classname' => 'null-instagram-feed',
