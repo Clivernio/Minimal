@@ -457,14 +457,13 @@ function dw_kido_logo() {
 		$header_class = 'display-title';
 	}
 
-	$logo = esc_url("http://clivern.com/wp-content/uploads/2015/01/clivern_logo.png");
-	//$logo = esc_url( dw_kido_get_theme_option( 'logo' ) );
+	$logo = esc_url( dw_kido_get_theme_option( 'logo' ) );
 	$logo_id = dw_kido_get_attachment_id_by_url( $logo );
 	$logo_url = wp_get_attachment_image_src( $logo_id, 'logo' );
 	if ( $logo_url ) {
 		$logo_url = $logo_url[0];
 	}
-
+	$logo_url = esc_url("http://clivern.com/wp-content/uploads/2015/01/clivern_logo-52x52.png");
 	$tagline = get_bloginfo( 'description' );
 
 	echo '<div class="site-title ' . esc_html( $header_class ) . '"><a href="' . esc_url( home_url( '/' ) ) . '" title="' . esc_attr( get_bloginfo( 'name', 'display' ) ) . '" rel="home">';
