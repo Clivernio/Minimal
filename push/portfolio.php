@@ -7,7 +7,7 @@
  * @link        http://clivern.com
  * @license     GPL
  * @version     1.0
- * @package     Ant
+ * @package     Min
  */
 
 class Portfolio extends WP_Widget {

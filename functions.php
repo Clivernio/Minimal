@@ -34,10 +34,10 @@ if ( is_plugin_active( 'inline-comments/functions.php' ) ) {
 
 //Push Features
 // --------------------------------------------
-require_once DW_KIDO_PATH . '/push/core.php';
 require_once DW_KIDO_PATH . '/push/forms.php';
 require_once DW_KIDO_PATH . '/push/portfolio.php';
 require_once DW_KIDO_PATH . '/push/twitter.php';
+require_once DW_KIDO_PATH . '/push/kudos.php';
 
 function register_twitter_widget()
 {
