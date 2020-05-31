@@ -14,21 +14,21 @@
  * Contact Form
  *
  * <form action="" id="clivern_beh_contact" method="post">
- *       Please send us your feedback, any kind is highly appreciated 
+ *       Please send us your feedback, any kind is highly appreciated
  *       <input name="securityhash" id="clivern_beh_contact_hash" type="hidden" value="d8c588c77bt7kdnksjhvfwsiedhcseifwhslifdhef" />
  *
  *       Your name
  *       <input name="client_name" id="clivern_beh_contact_name" class="input-block-level" type="text" placeholder="Type your name" value="" />
- *       
+ *
  *       Email
  *       <input name="client_email" id="clivern_beh_contact_email" class="input-block-level" type="text" placeholder="webmaster@example.com" value="" />
- *       
+ *
  *       Website
  *       <input name="client_website" id="clivern_beh_contact_website" class="input-block-level" type="text" placeholder="http://" value="" />
- *       
+ *
  *       Your Message
  *       <textarea name="client_message" id="clivern_beh_contact_message" class="input-block-level"></textarea>
- * 
+ *
  *       <input class="btn pull-right" id="clivern_beh_contact_submit" type="submit" value="Submit" />
  *       <span id="clivern_beh_contact_success_message" class="text-success" style="display:none">Thanks, We will respond to your feedback as soon as possible</span>
  * </form>
@@ -43,7 +43,7 @@
  *
  *       Your name
  *       <input name="client_name" id="clivern_beh_support_name" class="input-block-level" type="text" placeholder="Type your name" value="" />
- *       
+ *
  *       Item
  *       <select class="input-block-level" id="clivern_beh_support_item" name='client_item'>
  *             <option value='Accountant'>Accountant</option>
@@ -51,7 +51,7 @@
  *             <option value='Bits'>Bits</option>
  *             <option value='Diker'>Diker</option>
  *       </select>
- *       
+ *
  *       Issue Type
  *       <select class="input-block-level" id="clivern_beh_support_issue" name='client_issue'>
  *             <option value='Security Bug'>Security Bug</option>
@@ -59,20 +59,20 @@
  *             <option value='Suggestion'>Suggestion</option>
  *             <option value='Inquiry'>Inquiry</option>
  *       </select>
- *       
+ *
  *       Email
  *       <input name="client_email" id="clivern_beh_support_email" class="input-block-level" type="text" placeholder="webmaster@example.com" value="" />
- *       
+ *
  *       Website
  *       <input name="client_website" id="clivern_beh_support_website" class="input-block-level" type="text" placeholder="http://" value="" />
- *       
+ *
  *       Your Message
  *       <textarea name="client_message" id="clivern_beh_support_message" class="input-block-level"></textarea>
  *
- * 
+ *
  *       <input class="btn pull-right" id="clivern_beh_support_submit" type="submit" value="Submit" />
  *       <span id="clivern_beh_support_success_message" class="text-success" style="display:none">Thanks, We will respond to your ticket as soon as possible</span>
- * 
+ *
  * </form>
  */
 
@@ -80,7 +80,7 @@ class Forms {
 
       /**
        * Support email
-       * 
+       *
        * @since 1.0
        * @access private
        * @var string $this->support_email
@@ -113,7 +113,7 @@ class Forms {
        * @var string
        */
       private $hashc = 'amJnmfslqym4nO4cz*';
-      
+
       /**
        * Hash
        *
@@ -125,7 +125,7 @@ class Forms {
 
       /**
        * Contact email
-       * 
+       *
        * @since 1.0
        * @access private
        * @var string $this->contact_email
@@ -134,7 +134,7 @@ class Forms {
 
       /**
        * A list of my projects
-       * 
+       *
        * @since 1.0
        * @access private
        * @var string $this->items
@@ -143,7 +143,7 @@ class Forms {
 
       /**
        * A list of issue types
-       * 
+       *
        * @since 1.0
        * @access private
        * @var string $this->issue_types
@@ -152,7 +152,7 @@ class Forms {
 
       /**
        * Page id to insert request auth and processing scripts of contact
-       * 
+       *
        * @since 1.0
        * @access private
        * @var integer $this->contact_page_id
@@ -161,7 +161,7 @@ class Forms {
 
       /**
        * Page id to insert request auth and processing scripts of support
-       * 
+       *
        * @since 1.0
        * @access private
        * @var integer $this->support_page_id
@@ -170,7 +170,7 @@ class Forms {
 
       /**
        * Holds an instance of this class
-       * 
+       *
        * @since 1.0
        * @access private
        * @var object self::$instance
@@ -197,7 +197,7 @@ class Forms {
 
       /**
        * Init all actions to be performed in clivern
-       * 
+       *
        * @since 1.0
        * @access public
        */
@@ -246,7 +246,7 @@ class Forms {
             if((!isset($_POST['is_legit']) || ($_POST['is_legit'] != $this->hashd)) && (!is_user_logged_in())) {
                   die('Really');
             }
-            return $commentdata;    
+            return $commentdata;
       }
 
       /**
@@ -300,12 +300,12 @@ class Forms {
             $issue = ( (isset($_POST['issue'])) && (in_array($_POST['issue'], $this->issue_types)) ) ?  filter_var(trim($_POST['issue']), FILTER_SANITIZE_STRING) : false;
             //validate message
             $message = ( (isset($_POST['message'])) && ($_POST['message'] != '') ) ?  filter_var(trim($_POST['message']), FILTER_SANITIZE_STRING) : false;
-            
+
             if(!$action || !$client || !$hash){
                   // Return our response to the script in JSON format
                   header('Content: application/json');
                   echo json_encode($response);
-                  die;  
+                  die;
             }
 
             if( ($name == false) || ($name == '') || (strlen($name) < 2) ){
@@ -411,20 +411,20 @@ class Forms {
                                           message : $('#clivern_beh_support_message')
                               };
                               client.name.on('input',(function(){
-                                    $(this).removeClass('forms-inputs-error');     
+                                    $(this).removeClass('forms-inputs-error');
                               }));
                               client.email.on('input',(function(){
-                                    $(this).removeClass('forms-inputs-error');     
+                                    $(this).removeClass('forms-inputs-error');
                               }));
                               client.website.on('input',(function(){
-                                    $(this).removeClass('forms-inputs-error');     
+                                    $(this).removeClass('forms-inputs-error');
                               }));
                               client.message.on('input',(function(){
-                                    $(this).removeClass('forms-inputs-error');     
+                                    $(this).removeClass('forms-inputs-error');
                               }));
                               var error = false;
                               if(client.hash.val() == ''){
-                                    error = true;  
+                                    error = true;
                               }
                               if(client.name.val() == ''){
                                     client.name.addClass('forms-inputs-error');
@@ -432,17 +432,17 @@ class Forms {
                               }
                               if(client.email.val() == ''){
                                     client.email.addClass('forms-inputs-error');
-                                    error = true; 
+                                    error = true;
                               }
                               if( (client.item.val() == '') && (['Accountant','Bottle','Bits','Diker'].indexOf(client.item.val() < 0)) ){
-                                    error = true;      
+                                    error = true;
                               }
                               if( (client.issue.val() == '') && (['Security Bug','Normal Bug','Suggestion','Inquiry'].indexOf(client.issue.val() < 0)) ){
-                                    error = true;      
+                                    error = true;
                               }
                               if(client.message.val() == ''){
                                     client.message.addClass('forms-inputs-error');
-                                    error = true;      
+                                    error = true;
                               }
                               if(error === false){
                                     client.name.attr('disabled', 'disabled');
@@ -458,7 +458,7 @@ class Forms {
                                                 client : ClivernBehSupportPriv.client,
                                                 hash : client.hash.val(),
                                                 name : client.name.val(),
-                                                website : client.website.val(), 
+                                                website : client.website.val(),
                                                 email : client.email.val(),
                                                 item : client.item.val(),
                                                 issue : client.issue.val(),
@@ -511,7 +511,7 @@ class Forms {
                                     'json'
                                     );
                               }
-                              event.preventDefault(); 
+                              event.preventDefault();
                         });
                   })
                   /* ]]> */
@@ -547,12 +547,12 @@ class Forms {
             $website = ($website == '') ? '' : filter_var(trim($_POST['website']), FILTER_VALIDATE_URL);
             //validate message
             $message = ( (isset($_POST['message'])) && ($_POST['message'] != '') ) ?  filter_var(trim($_POST['message']), FILTER_SANITIZE_STRING) : false;
-            
+
             if(!$action || !$client || !$hash){
                   // Return our response to the script in JSON format
                   header('Content: application/json');
                   echo json_encode($response);
-                  die;  
+                  die;
             }
             if( ($name == false) || ($name == '') || (strlen($name) < 2) ){
                   $response['data'] = 'name';
@@ -614,7 +614,7 @@ class Forms {
                               };
                   /* ]]> */
             </script>
-            <?php    
+            <?php
       }
 
       /**
@@ -644,19 +644,19 @@ class Forms {
                               };
                               var error = false;
                               client.name.on('input',(function(){
-                                    $(this).removeClass('forms-inputs-error');     
+                                    $(this).removeClass('forms-inputs-error');
                               }));
                               client.email.on('input',(function(){
-                                    $(this).removeClass('forms-inputs-error');     
+                                    $(this).removeClass('forms-inputs-error');
                               }));
                               client.website.on('input',(function(){
-                                    $(this).removeClass('forms-inputs-error');     
+                                    $(this).removeClass('forms-inputs-error');
                               }));
                               client.message.on('input',(function(){
-                                    $(this).removeClass('forms-inputs-error');     
+                                    $(this).removeClass('forms-inputs-error');
                               }));
                               if(client.hash.val() == ''){
-                                    error = true;  
+                                    error = true;
                               }
                               if(client.name.val() == ''){
                                     client.name.addClass('forms-inputs-error');
@@ -664,11 +664,11 @@ class Forms {
                               }
                               if(client.email.val() == ''){
                                     client.email.addClass('forms-inputs-error');
-                                    error = true; 
+                                    error = true;
                               }
                               if(client.message.val() == ''){
                                     client.message.addClass('forms-inputs-error');
-                                    error = true;      
+                                    error = true;
                               }
                               if(error === false){
                                     client.name.attr('disabled', 'disabled');
@@ -723,7 +723,7 @@ class Forms {
                                     'json'
                                     );
                               }
-                              event.preventDefault(); 
+                              event.preventDefault();
                         });
                   })
                   /* ]]> */
@@ -732,3 +732,6 @@ class Forms {
       }
 
 }
+
+$forms = Forms::Instance();
+$forms->Init();

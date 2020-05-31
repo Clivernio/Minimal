@@ -44,7 +44,7 @@ class Twitter extends WP_Widget {
 
 	/**
 	 * Widget constructor function
-	 * 
+	 *
 	 * @since 1.0
 	 */
 	function __construct()
@@ -58,7 +58,7 @@ class Twitter extends WP_Widget {
 
 	/**
 	 * Get widget options
-	 * 
+	 *
 	 * @since 1.0
 	 */
 	function get_options()
@@ -68,7 +68,7 @@ class Twitter extends WP_Widget {
 
 	/**
 	 * Get latest tweets
-	 * 
+	 *
 	 * @since 1.0
 	 * @return boolean
 	 */
@@ -97,7 +97,7 @@ class Twitter extends WP_Widget {
 		  'headers' => array(
 		    'Authorization' => 'Bearer ' . $this->latest_tweet[ 'access_token' ]
 		  ),
-		  // disable checking SSL sertificates               
+		  // disable checking SSL sertificates
 		  'sslverify' => false ));
 		//decode returned data
 		$result = json_decode(wp_remote_retrieve_body($remote_get_tweets));
@@ -137,7 +137,7 @@ class Twitter extends WP_Widget {
 
 	/**
 	 * Get access token
-	 * 
+	 *
 	 * @since 1.0
 	 * @return boolean
 	 */
@@ -176,7 +176,7 @@ class Twitter extends WP_Widget {
 
 	/**
 	 * Update tweets urls
-	 * 
+	 *
 	 * @since 1.0
 	 * @param string $content
 	 * @return string
@@ -201,7 +201,7 @@ class Twitter extends WP_Widget {
 
 	/**
 	 * Show widget in front end
-	 * 
+	 *
 	 * @since 1.0
 	 * @param array $args
 	 * @param array $instance
@@ -283,7 +283,7 @@ class Twitter extends WP_Widget {
 
 	/**
 	 * Update widget options
-	 * 
+	 *
 	 * @since 1.0
 	 * @return boolean
 	 */
@@ -293,3 +293,10 @@ class Twitter extends WP_Widget {
 	}
 
 }
+
+function register_twitter_widget()
+{
+    register_widget('Twitter');
+}
+
+add_action('widgets_init', 'register_twitter_widget');
