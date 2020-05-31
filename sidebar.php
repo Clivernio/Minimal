@@ -1,5 +1,5 @@
 <div class="sidebar-inner">
-	
+
 	<div class="site-header hidden-xs hidden-sm">
 		<?php dw_kido_logo(); ?>
 		<div class="side-desc">
@@ -32,7 +32,7 @@
 		</section>
 
 	<?php endif; ?>
-	
+
 	<div role="contentinfo">
 		<div class="copyright">
 			<?php if ( dw_kido_get_theme_option( 'copyright' ) ) : ?>

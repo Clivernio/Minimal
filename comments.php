@@ -28,14 +28,14 @@ if ( post_password_required() ) {
 		<p class="no-comments"><?php _e( 'Comments are closed.', 'dw-kido' ); ?></p>
 	<?php endif; ?>
 
-	<?php 
-		comment_form( array( 
-			'format' => 'html5', 
+	<?php
+		comment_form( array(
+			'format' => 'html5',
 			'comment_notes_after' => '',
 			'title_reply' => __( 'Leave a comment.', 'dw-kido' ),
 			'title_reply_to' => __( 'Leave a comment to %s', 'dw-kido' ),
 			'comment_field' =>  '<p class="comment-form-comment"><label for="comment">' . _x( 'Comment', 'noun' ) . ' <span class="required">*</span></label><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true">' . '</textarea></p>',
-		) ); 
+		) );
 	?>
 
 </div>

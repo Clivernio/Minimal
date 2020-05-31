@@ -18,7 +18,7 @@ function dw_kido_wp_title( $title, $sep ) {
 	if ( is_feed() ) {
 		return $title;
 	}
-	
+
 	global $page, $paged;
 
 	$title .= get_bloginfo( 'name', 'display' );
@@ -70,4 +70,4 @@ function dw_kido_postclasses( $classes ) {
 	}
 	return $classes;
 }
-add_action( 'post_class', 'dw_kido_postclasses' );	
+add_action( 'post_class', 'dw_kido_postclasses' );

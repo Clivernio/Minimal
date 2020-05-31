@@ -10,7 +10,7 @@
 					<main class="main col-md-9" role="main">
 						<?php dw_kido_site_header_mobile(); ?>
 						<?php if ( have_posts() ) : ?>
-							
+
 							<?php dw_kido_page_header(); ?>
 
 							<?php while ( have_posts() ) : the_post(); ?>

@@ -7,7 +7,7 @@
 					<aside class="sidebar col-md-3" role="complementary">
 						<?php get_sidebar(); ?>
 					</aside>
-					
+
 					<main class="main col-md-9" role="main">
 						<?php dw_kido_site_header_mobile(); ?>
 						<?php while ( have_posts() ) : the_post(); ?>
@@ -15,7 +15,7 @@
 								<header class="entry-header">
 									<h1 class="entry-title"><?php the_title(); ?></h1>
 								</header>
-								
+
 								<div class="entry-content">
 									<?php the_content(); ?>
 									<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'dw-kido' ), 'after' => '</div>' ) ); ?>

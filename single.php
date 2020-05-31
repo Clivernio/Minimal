@@ -57,9 +57,9 @@
 							<?php dw_kido_post_nav(); ?>
 
 							<?php // dw_kido_related_posts(); ?>
-							<?php if ( comments_open() || '0' != get_comments_number() ) : ?> 
+							<?php if ( comments_open() || '0' != get_comments_number() ) : ?>
 								<?php comments_template();  ?>
-							<?php endif; ?>							
+							<?php endif; ?>
 						<?php endwhile;?>
 					</main>
 				</div>

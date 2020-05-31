@@ -9,7 +9,7 @@ if ( ! function_exists( 'dw_kido_page_header' ) ) {
 
 		} elseif ( is_tag() ) {
 			_e( 'Tag: ', 'dw-kido' );
-			single_tag_title(); 
+			single_tag_title();
 
 		} elseif ( is_author() ) {
 			printf( __( 'Author: %s', 'dw-kido' ), '<span class="vcard">' . get_the_author() . '</span>' );
@@ -42,7 +42,7 @@ if ( ! function_exists( 'dw_kido_page_header' ) ) {
 		}
 
 		echo '</h1>';
-		
+
 		$term_description = term_description();
 		if ( ! empty( $term_description ) ) {
 			printf( '<div class="taxonomy-description">%s</div>', $term_description );
@@ -86,7 +86,7 @@ if ( ! function_exists( 'dw_kido_paging_nav' ) ) {
 						<li class="next"><span class="text-muted"><?php _e( 'Newer Entries &raquo;', 'dw-kido' ) ?></span></li>
 					<?php endif; ?>
 				</ul>
-			</nav>	
+			</nav>
 		<?php endif ?>
 		<?php
 	}
@@ -114,9 +114,9 @@ if ( ! function_exists( 'dw_kido_post_nav' ) ) {
 					<?php else : ?>
 						<li class="previous"><span class="text-muted"><?php _e( '&laquo; Older Entries ', 'dw-kido' ) ?></span></li>
 					<?php endif; ?>
-					
+
 					<?php if ( $next ): ?>
-						<?php next_post_link( '<li class="next">%link</li>', _x( 'Newer Entries &raquo;', 'Next post link', 'dw-kido' ) ); ?>	
+						<?php next_post_link( '<li class="next">%link</li>', _x( 'Newer Entries &raquo;', 'Next post link', 'dw-kido' ) ); ?>
 					<?php else : ?>
 						<li class="next"><span class="text-muted"><?php _e( 'Newer Entries &raquo;', 'dw-kido' ) ?></span></li>
 					<?php endif ?>
@@ -148,7 +148,7 @@ if ( ! function_exists( 'dw_kido_posted_on' ) ) {
 		echo '<span class="post-on"><span>' . esc_html__( ' On ','dw-kido' ) . '</span><span class="updated">' . wp_kses_post( $time_string ) . '</span></span>';
 		echo '<span class="post-in"><span>' . esc_html__( ' In ','dw-kido' ) . '</span><span>' . $categories_list . '</span></span>';
 		if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) {
-			echo '<span class="comments-link"><span>' . esc_html__( ' with ','dw-kido' ) . '</span><span>'; 
+			echo '<span class="comments-link"><span>' . esc_html__( ' with ','dw-kido' ) . '</span><span>';
 			comments_popup_link( __( '0 Comment', 'dw-kido' ), __( '1 Comment', 'dw-kido' ), __( '% Comments', 'dw-kido' ) );
 		}
 		echo '</span></span>';
@@ -206,7 +206,7 @@ if ( ! function_exists( 'dw_kido_related_posts' ) ) {
 				'posts_per_page' => 3,
 				'ignore_sticky_posts' => 1,
 				);
-		} 
+		}
 
 		$related_query = new wp_query( $args ); ?>
 
@@ -284,7 +284,7 @@ if ( ! function_exists( 'dw_kido_gallery_shortcode' ) ) {
 			$orderby = 'none';
 
 		if ( ! empty( $include ) ) {
-			
+
 			$_attachments = get_posts( array( 'include' => $include, 'post_status' => 'inherit', 'post_type' => 'attachment', 'post_mime_type' => 'image', 'order' => $order, 'orderby' => $orderby ) );
 
 			$attachments = array();
@@ -343,7 +343,7 @@ if ( ! function_exists( 'dw_kido_gallery_shortcode' ) ) {
 			$output .= '</div>';
 		}
 		$output .= ' </div>';
-		
+
 		if ( count( $attachments ) > 1 ) {
 			$output .= '<div class="carousel-nav"><ul></ul></div>';
 

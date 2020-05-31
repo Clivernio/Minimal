@@ -388,7 +388,7 @@ function colour_brightness( $hex, $percent ) {
 	}
 	/// HEX TO RGB
 	$rgb = array( hexdec( substr( $hex, 0, 2 ) ), hexdec( substr( $hex, 2, 2 ) ), hexdec( substr( $hex, 4, 2 ) ) );
-	//// CALCULATE 
+	//// CALCULATE
 	for ( $i = 0; $i < 3; $i++ ) {
 		// See if brighter or darker
 		if ( $percent > 0 ) {
@@ -443,8 +443,8 @@ function dw_kido_get_attachment_id_by_url( $url ) {
 			update_option( 'dw-logo', $logo_id );
 		} else {
 			add_option( 'dw-logo', $logo_id );
-		}	
-	}	
+		}
+	}
 	return $logo_id;
 }
 
@@ -523,7 +523,7 @@ if ( ! function_exists( 'dw_kido_typo_font' ) ) {
 			<?php
 		endif;
 
-		// body font 
+		// body font
 
 		$body_font_import = dw_kido_get_theme_option( 'body_font_import' );
 		$body_font_font_family = dw_kido_get_theme_option( 'body_font_font_family' );
