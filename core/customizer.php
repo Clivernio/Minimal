@@ -463,7 +463,7 @@ function dw_kido_logo() {
 	if ( $logo_url ) {
 		$logo_url = $logo_url[0];
 	}
-	$logo_url = esc_url("http://clivern.com/wp-content/uploads/2015/01/clivern_logo-52x52.png");
+	$logo_url = esc_url("//clivern.com/wp-content/uploads/2015/01/clivern_logo-52x52.png");
 	$tagline = get_bloginfo( 'description' );
 
 	echo '<div class="site-title ' . esc_html( $header_class ) . '"><a href="' . esc_url( home_url( '/' ) ) . '" title="' . esc_attr( get_bloginfo( 'name', 'display' ) ) . '" rel="home">';
